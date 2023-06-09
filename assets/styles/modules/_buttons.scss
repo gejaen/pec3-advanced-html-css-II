@@ -1,0 +1,24 @@
+.btn {
+
+  &.btn-secondary {
+    background-color: $color-grey;
+    border: $color-grey;
+    color:$color-light;
+  }
+
+  &.btn-secondary:hover,
+  &.btn-secondary:active
+    {
+    background-color: $color-grey2;
+    border: $color-grey2;
+  }
+
+  //feather icon
+  .feather {
+    position: relative;
+    width:15px;
+    height: 15px;
+    top:2px;
+  }
+
+}

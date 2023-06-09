@@ -1,0 +1,242 @@
+// Text Sizes (Map) ------ 
+
+$txt-sizes: (
+    1: $font-sz1, 
+    2: $font-sz2, 
+    3: $font-sz3, 
+    4: $font-sz4, 
+    5: $font-sz5, 
+    6: $font-sz6, 
+    7: $font-sz7, 
+    8: $font-sz8,
+);
+
+/* text sizes */
+@each $name, $size in $txt-sizes  {
+    .tx-sz#{$name} {font-size:$size;} 
+}
+
+
+/* font weights */
+.tx-wgr {font-weight: 400;}
+.tx-wgl {font-weight: 300;}
+.tx-wgm {font-weight: 500;}
+.tx-wgb {font-weight: 600;}
+
+
+/* text transform */
+.tx-neg {
+  background-color:$color-main;
+  color: $color-light;
+}
+
+/* text align */
+.tx-poc {text-align: center;}
+.tx-pol {text-align: left;}
+.tx-por {text-align: right;}
+
+
+  @include for-small {
+    .tx-poc-sm {text-align: center;}
+    .tx-pol-sm {text-align: left;}
+    .tx-por-sm {text-align: right;}
+  }
+
+  @include for-medium {
+    .tx-poc-md {text-align: center;}
+    .tx-pol-md {text-align: left;}
+    .tx-por-md {text-align: right;}
+  }
+
+  /* line heights */
+
+.tx-lh-08 {line-height: 0.8em;}
+.tx-lh-1 {line-height: 1em;}
+.tx-lh-15 {line-height: 1.5em;}
+
+
+/* list styles */
+.tx-li-1 {
+  margin-left:0;
+  padding-left:0;
+
+  li {
+    list-style: none;
+  
+  }
+
+}
+
+/* height */
+.hi-page {min-height: 77vh;}
+
+/* width */
+.wi-100 {width:100%;}
+.wi-50 {width:calc(50% - #{$sp-2});}
+.wi-33 {width:33%;}
+
+
+/* diplay */
+.di-bl {display:block;}
+.di-ib {display:inline-block;}
+.di-il {display:inline;}
+
+/* flex */
+/*[class*="fx-"] {
+  display: flex;
+}*/
+
+.fx {display: flex;}
+
+.fx-column  { flex-direction: column }
+.fx-wrap    { flex-wrap: wrap }
+
+.fx-itm-start    { align-items: flex-start }
+.fx-itm-end      { align-items: flex-end }
+.fx-itm-center   { align-items: center }
+.fx-itm-baseline { align-items: baseline }
+.fx-itm-stretch  { align-items: stretch }
+
+.fx-slf-start    { align-self: flex-start }
+.fx-slf-end      { align-self: flex-end }
+.fx-slf-center   { align-self: center }
+.fx-slf-baseline { align-self: baseline }
+.fx-slf-stretch  { align-self: stretch }
+
+.fx-jst-start   { justify-content: flex-start }
+.fx-jst-end     { justify-content: flex-end }
+.fx-jst-center  { justify-content: center }
+.fx-jst-between { justify-content: space-between }
+.fx-jst-around  { justify-content: space-around }
+.fx-jst-evenly  { justify-content: space-evenly }
+
+.fx-cnt-start   { align-content: flex-start }
+.fx-cnt-end     { align-content: flex-end }
+.fx-cnt-center  { align-content: center }
+.fx-cnt-between { align-content: space-between }
+.fx-cnt-around  { align-content: space-around }
+.fx-cnt-stretch { align-content: stretch }
+
+.fx-auto {
+    flex: 1 1 auto;
+    min-width: 0; /* 1 */
+    min-height: 0; /* 1 */
+  }
+
+.fx-none { flex: none }
+
+.fx-ord-0 { order: 0 }
+.fx-ord-1 { order: 1 }
+.fx-ord-2 { order: 2 }
+.fx-ord-3 { order: 3 }
+.fx-ord-last { order: 99999 }
+
+
+
+
+
+@include for-small {
+  .fx-jst-center-sm {
+    display: flex;
+    justify-content: center
+  }
+}
+
+
+
+
+/* position */
+
+.po-re {position: relative;}
+.po-ab {position: absolute;}
+.po-fi {position: fixed;}
+
+
+
+/* effects */
+
+.ef-img-co-ma2 {
+  filter: brightness(0.54) contrast(0.83) hue-rotate(-304deg) saturate(1.62) ;
+  
+  &:hover,
+  &:active {
+    filter: none;
+  }
+}
+
+
+/* hide and show */
+.hide {display: none;}
+.show {display: initial ;}
+
+@include for-small {
+  .hide-sm {display: none;}
+  .show-sm {display: initial ;}
+}
+
+@include for-medium {
+  .hide-md {display: none;}
+  .show-md {display: initial ;}
+}
+
+
+
+
+/* border */
+
+.bo-t {
+  border-top:3px solid $color-main2;
+}
+
+
+/* image boxes aspect ratios */
+.img-cover {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  height: 0;
+
+  img {
+    display: none;
+  }
+
+  &.img-1to1 {
+    padding-top: 100%;
+  }
+  
+  &.img-2to1 {
+    padding-top: 50%;
+  }
+  
+  &.img-16to9 {
+    padding-top: 56.25%;
+  }
+  
+  &.img-4to3 {
+    padding-top: 75%;
+  }
+
+  .overlay {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top:0;
+    display: none;
+    //display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0,0,0,0.7);
+    color:#ffffff;
+    text-align: center;
+  }
+
+  &:hover,
+  &:active {
+    .overlay {
+      display:flex;
+      cursor: none;
+    }
+  }
+}
+

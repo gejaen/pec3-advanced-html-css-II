@@ -1,0 +1,93 @@
+// Grid using Flexbox only (used to fulfill UOC requirements)
+
+.fx-grid {
+  --gutter: #{$grid-gutter};
+
+    // flexbox
+    width: calc(100% + var(--gutter));
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: calc(-1 * var(--gutter));
+
+
+
+ & > [class*="wi-"] {
+    box-sizing: border-box;
+
+      margin-left:var(--gutter);
+      margin-bottom:var(--gutter);
+    
+
+    // &.wi-1-5 { flex-basis: calc(20% - 20px); } //example output
+    @each $unit, $width in $map-grid-width {
+      &.wi-#{$unit} {
+          $width_comp:calc(#{$width} / #{$grid-total-cols} * 100%);
+          flex-basis: calc(#{$width_comp} - calc( 1 * var(--gutter)))
+        }
+    }
+  
+  }
+
+  // grid gutter sizes
+  &.gutter-0 {--gutter: 0px;}
+  &.gutter-1 {--gutter: #{$grid-gutter};}
+  &.gutter-2 {--gutter: calc(2 * #{$grid-gutter});}
+  &.gutter-3 {--gutter: calc(3 * #{$grid-gutter});}
+  
+    // grid center items
+    &.grid-center {justify-content: center;} 
+
+
+
+  // width classes for breakpoints  
+  @each $bp_name, $bp_width in $map-breakpoints {
+    @media only screen and (max-width: $bp_width) {
+       > [class*="wi-"] {
+          // &.wi-lg-1-5 { flex-basis: calc(20%); } //example output
+    
+          @each $unit, $width in $map-grid-width {
+            &.wi-#{$bp_name}-#{$unit} {              
+                  $width_comp:calc(#{$width} / #{$grid-total-cols} * 100%);
+                flex-basis: calc(#{$width_comp} - calc( 1 * var(--gutter))); 
+     
+              }
+          }
+        }
+      }
+    }
+
+     // extra width for breakpoint medium
+        @media only screen and (max-width: $breakpoint-md) {
+          > [class*="wi-"] {
+      
+            @each $unit, $width in $map-grid-width {
+              &.wi-#{$unit} {
+                flex-basis: calc(#{$grid-total-cols} / #{$grid-total-cols} * 100% - calc( 1 * var(--gutter))); 
+                }
+            }
+            
+          }
+        }
+
+    // extra width for breakpoint small
+    @media only screen and (max-width: $breakpoint-sm) {
+      > [class*="wi-"] {
+  
+        @each $unit, $width in $map-grid-width-sm {
+          &.wi-#{$unit} {
+             flex-basis: calc(#{$grid-total-cols} / #{$grid-total-cols} * 100% - calc( 1 * var(--gutter))); 
+            }
+        }
+        
+      }
+    }
+
+
+
+
+  }
+
+
+
+
+

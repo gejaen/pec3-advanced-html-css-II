@@ -1,0 +1,23 @@
+.form-simple {
+
+
+  label {
+    display: block;
+    margin-bottom:$sp-2;
+  }
+
+  input {
+    width:100%;
+    padding:$sp-4;
+  }
+
+  textarea {
+    width:100%;
+    padding:$sp-4;
+  }
+
+  .form-control {
+    margin-bottom: $sp-4;
+  }
+
+}
