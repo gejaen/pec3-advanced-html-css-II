@@ -1,0 +1,134 @@
+
+@use "sass:color";
+
+// main colors
+$color-main:#FFB0CA;
+$color-main2: #8DFF9E;
+
+
+// color variations
+$color-main-dark: color.adjust($color-main, $lightness: -10%);
+$color-main-light: color.adjust($color-main, $lightness: 5%);
+$color-main2-dark: color.adjust($color-main2, $lightness: -10%);
+$color-main2-light: color.adjust($color-main2, $lightness: 5%);
+//$color-main-dark: darken($color-main, 10%);
+//$color-main-light: lighten($color-main, 5%);
+//$color-main2-dark: darken($color-main2, 10%);
+//$color-main2-light: lighten($color-main2, 5%);
+
+
+// dark and light
+$color-light:#ffffff;
+$color-dark:#000000;
+
+// greys
+$color-grey:#2c2c2c;
+$color-grey1: color.adjust($color-grey, $lightness: 15%);
+$color-grey2: color.adjust($color-grey, $lightness: 25%);
+$color-grey3: color.adjust($color-grey, $lightness: 36%);
+$color-grey4: color.adjust($color-grey, $lightness: 68%);
+$color-grey5: color.adjust($color-grey, $lightness: 75%);
+//$color-grey1:lighten($color-grey, 15%);
+//$color-grey2:lighten($color-grey, 25%);
+//$color-grey3:lighten($color-grey, 36%);
+//$color-grey4:lighten($color-grey, 68%);
+//$color-grey5:lighten($color-grey, 75%);
+
+// some colors
+$color-red:#F26868;
+$color-green:#9BFF00;
+$color-orange:#FFAA00;
+$color-purple:#7388ff;
+
+
+// space units
+$sp-1 : 2px;
+$sp-2 : 4px;
+$sp-3 : 4px;
+$sp-4 : 12px;
+$sp-5 : 24px;
+$sp-6 : 36px;
+$sp-7 : 64px;
+$sp-8 : 86px;
+$sp-9 : 120px;
+
+// fonts
+$font-family-mono : 'DM Mono', monospace;
+$font-family-serif: "Georgia", "Times New Roman", serif;
+$font-main: $font-family-mono;
+
+// font sizes -------------------
+$base-font-sz: 16;
+
+$font-sz-html: $base-font-sz + px;
+
+$font-sz1 : calc(13 / $base-font-sz) + rem !default; 
+$font-sz2 : calc(16 / $base-font-sz) + rem !default; 
+$font-sz3 : calc(20 / $base-font-sz) + rem !default; 
+$font-sz4 : calc(26 / $base-font-sz) + rem !default; 
+$font-sz5 : calc(36 / $base-font-sz) + rem !default; 
+$font-sz6 : calc(42 / $base-font-sz) + rem !default; 
+$font-sz7 : calc(56 / $base-font-sz) + rem !default; 
+$font-sz8 : calc(72 / $base-font-sz) + rem !default; 
+
+
+
+
+
+
+// breakpoints (desktop first!)
+$breakpoint-sm : 480px;
+$breakpoint-md : 800px;
+$breakpoint-lg : 1024px;
+
+
+
+
+
+// Maps for loops -------------------
+
+
+// map with colors
+$colors: (
+  color-main : (color: $color-main, short: ma),
+  color-main2 : (color : $color-main2, short: ma2),
+  
+  color-main-dark : (color : $color-main-dark, short: ma-d),
+  color-main-light : (color : $color-main-light, short: ma-l),
+  color-main2-dark : (color : $color-main2-dark, short: ma2-d),
+  color-main2-light : (color : $color-main2-light, short: ma2-l),
+
+
+  color-light : (color : $color-light, short: light),
+  color-dark : (color : $color-dark, short: dark),
+
+  color-grey : (color : $color-grey, short: gr),
+  color-grey1 : (color : $color-grey1, short: gr1),
+  color-grey2 : (color : $color-grey2, short: gr2),
+  color-grey3 : (color : $color-grey3, short: gr3),
+  color-grey4 : (color : $color-grey4, short: gr4),
+  color-grey5 : (color : $color-grey5, short: gr5),
+
+  color-red : (color : $color-red, short: "red"),
+  color-green : (color : $color-green, short: "green"),
+  color-orange : (color : $color-orange, short: "orange"),
+  color-purple : (color : $color-purple, short: "purple"),
+);
+
+
+
+
+
+// customize bootstrap 
+$theme-colors: (
+  "primary":    $color-main,
+  "secondary":  $color-main2,
+  "light":      $color-light,
+  "dark":       $color-dark
+);
+
+$border-radius: 0px;
+$border-radius-sm: 0px;
+$border-radius-lg: 0px;
+
+

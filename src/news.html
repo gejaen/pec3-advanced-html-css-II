@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <include src="./src/partials/head-common.html"></include>
+  <title>F'Hain Chess Club</title>
+
+</head>
+
+<body>
+
+  <header class="page-header bg-pink">
+    <include src="./src/partials/header.html"></include>
+  </header>
+
+  <!-- section with flex grid-->
+  <div class="container-full">
+
+    <!-- intro image-->
+    <div>
+      <img src="assets/images/pic-cover-news.jpg" alt="News Cover" />
+    </div>
+
+
+    
+    <article class="container is-small m-t5">
+
+      <header class="flex flex-wrap -mx-8 mt-10 mb-14">
+      <!-- intro -->
+      <div class="w-4/12 px-6"><h1 class="font-bold text-4.5xl pr-16">Welcome to our chess playing club!</h1></div>
+      <div class="w-8/12 px-6 text-gray text-xl leading-6 font-regualr">
+        <p class="mb-4">Our club is dedicated to bringing together chess enthusiasts of all levels to play, learn, and improve their skills in a friendly and welcoming environment.</p>
+        <p>We provide a space for players to come together and enjoy the game of chess, whether you're a seasoned player or just starting out. Our club offers a variety of activities and events to keep things interesting, including regular tournaments, friendly matches, and chess lessons for beginners.</p>
+      </div>
+     </header>
+
+      <!-- list of benefits-->
+      <section>
+        <ul>
+          <include src="./src/partials/feature-list-item.html" 
+          locals='{
+            "icon": "trending-up",
+            "intro": "Improve your skills:",
+            "text": "Playing regularly with other club members can help you improve your skills and learn new strategies. You can get feedback from experienced players and learn from their experience, which can help you become a better player."
+            }'
+          ></include>
+
+          <include src="./src/partials/feature-list-item.html" 
+          locals='{
+            "icon": "users",
+            "intro": "Meet new people:",
+            "text": "Playing against different opponents with varying skill levels can challenge you to think creatively and try out new tactics. It can also help you identify and work on weaknesses in your game."
+            }'
+          ></include>
+
+          <include src="./src/partials/feature-list-item.html" 
+          locals='{
+            "icon": "zap",
+            "intro": "Challenge yourself:",
+            "text": "Playing regularly with other club members can help you improve your skills and learn new strategies. You can get feedback from experienced players and learn from their experience, which can help you become a better player."
+            }'
+          ></include>
+
+         
+        </ul>
+      </section>
+   
+
+      <!-- more -->
+      <section class="pt-4">
+        <figure>
+          <img src="assets/images/pic-article-news.jpg" alt="Palaying chess">
+          <figcaption>Playing chess!</figcaption>
+        </figure>
+          <p class="text-3xl leading-8 my-8">
+          Our members come from all walks of life, and we pride ourselves on creating a diverse and inclusive community. Whether you're looking to improve your game, meet new people, or just have fun playing chess, our club is the perfect place to do it.
+        </p>
+        <p class="text-gray text-base">
+        Chess is a game of strategy and skill that has captivated players for centuries. Whether you're a beginner or an experienced player, chess offers endless possibilities for learning, improving, and enjoying the game. Chess is a game that challenges your mind, encourages critical thinking, and promotes creativity. It's a game that can be played anywhere, at any time, with anyone, making it accessible to people of all ages and backgrounds.
+      </p>
+      </section>
+
+
+      <section class="flex flex-wrap justify-center py-16">
+        <div class="w-8/12 border-t-solid border-t-4 border-t-green">
+          <p class="text-center font-semibold text-xl leading-6 mt-6">We welcome players of all ages and skill levels to share their love of chess. Come join us and experience the joy and challenge of this timeless game!</p>
+
+        </div>
+      </section>
+
+
+      
+      
+
+  
+  </article>
+
+
+</div>
+    <!-- / intro section with css grid-->
+
+ 
+
+    <footer class="page-footer bg-gray">
+   
+      <include src="./src/partials/footer.html"></include>
+    </footer>
+  
+  <script type="module" src="./assets/scripts/main.js"></script><!-- do not remove this line! -->
+
+
+</body>
+
+</html>

@@ -1,0 +1,81 @@
+$display-flex : 1; //switch flex fallback on:1 or off:0
+
+.cover-poster {
+
+  .squares {
+
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  grid-template-rows: repeat(3, minmax(120px, 180px));
+  grid-gap: 0px;
+
+  @include for-medium {
+    grid-template-columns: auto;
+    grid-template-rows: repeat(3, auto);
+    text-align: center;
+  }
+
+
+  // fallback flex
+  @if $display-flex == 1 {
+    @supports not (display:grid) { 
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+    }
+  }
+
+}
+
+  .cell {
+    font-size: $font-sz3;
+    //background-color: #ccc;
+     display: grid;
+
+     @include for-medium {
+      padding-top:$sp-4;
+      padding-bottom:$sp-4;
+    }
+
+  
+     
+
+    // fallback flex
+    @if $display-flex == 1 {
+    @supports not (display:grid) {  
+    display: flex; 
+    min-height:180px;
+    width: calc(33.33%);
+    margin-bottom: 0;
+   
+    /*@include for-medium {
+      width:100%;
+      //padding-bottom: calc(40%);
+    }*/
+  }
+  }
+
+  
+    }
+
+    a {
+      text-decoration: none;
+    }
+    .cell:hover {
+     background-color:$color-dark;
+     align-items: center;
+     justify-content: center;
+     color:$color-light;
+      text-align: center;
+      text-decoration: none;
+    }
+
+    .not-active:hover {
+      background-color:$color-main-light;
+     }
+
+
+
+
+
+}
