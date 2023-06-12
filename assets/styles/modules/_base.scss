@@ -1,0 +1,211 @@
+@use "sass:map";
+
+:root {  
+  // colors
+  @each $key, $val in $colors {
+    --#{$key}: #{map.get($val, color)};
+  }
+}
+
+
+*{
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: $font-family-mono;
+  font-size: $font-sz-html;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+h1 {
+  font-size: $font-sz6;
+}
+
+h2 {
+  font-size: $font-sz5;
+}
+
+h3 {
+  font-size: $font-sz4;
+}
+
+a {
+  color:var(--color-dark);
+}
+
+
+a:visited {
+  color:var(--color-dark);
+}
+
+figure {
+  margin:0;
+}
+
+
+/* containers */
+
+.container-full {
+  width: 100%;
+}
+
+.container {
+  max-width: 1120px;
+  margin-left:auto;
+  margin-right:auto;
+  padding-left:$sp-6;
+  padding-right:$sp-6;
+
+  &.is-large{
+    max-width: 1400px;
+
+  }
+
+  &.is-small{
+    max-width: 1120px;
+  }
+
+  &.is-xsmall{
+    max-width: 400px;
+  }
+
+
+}
+
+
+
+/* navigation */
+.nav-hor {
+  
+  display:flex;
+  justify-content: flex-end;
+  margin-left: 0;
+  padding-left: 0;
+
+  @include for-medium {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  li {
+    list-style: none;
+    margin-left:$sp-5;
+    margin-bottom: $sp-2;
+    @include for-medium {
+      margin-left:0;
+    }
+  }
+
+
+  a {
+    text-decoration: none;
+  }
+
+  a:hover, 
+  a:active {
+    color:$color-main;
+  }
+
+  &.is-dark {
+    a:hover,
+    a:active {
+      color:$color-light;
+    }
+  }
+
+}
+
+
+
+/* header and navbar */
+
+.page-header {
+  padding-top:$sp-4;
+  padding-bottom:$sp-5;
+
+.logo {
+  min-height: 60px;
+  max-height: 80px;
+  margin-top:$sp-4;
+}
+
+&.co-bg-ma {
+  a:hover {
+    color:$color-light;
+  }
+}
+
+}
+
+
+/* footer */
+.page-footer {
+
+  padding-top:$sp-6;
+  padding-bottom:$sp-6;;
+
+  .logo {
+    max-height: 35px;
+    margin-top:$sp-4;
+  }
+
+}
+
+
+
+
+/* feather icons */
+
+.feather {
+
+  &.ico-sz-3 {
+  width:30px;
+  height: 30px;
+  stroke-width: 2;
+}
+
+&.ico-sz-4 {
+  width:60px;
+  height:60px;
+  stroke-width: 1;
+}
+
+}
+
+
+/* lists */
+
+.list-style-2 {
+  margin-left:0;
+  padding-left:0;
+
+  li {
+    background-color: $color-main2;
+    list-style: none;
+    padding:$sp-5 $sp-5;
+    margin-bottom: $sp-5;
+  
+  }
+
+}
+
+
+
+/* bootstrap cards */
+
+.card {
+
+  margin-bottom: $sp-6;
+
+  .card-text {
+    color:$color-grey3;
+  }
+
+
+}

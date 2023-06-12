@@ -1,0 +1,149 @@
+$grid-total-cols: 12;
+$grid-gutter: 12px;
+
+
+$map-grid-width:(
+  "1": 12,
+  "1-12":1,
+  "2-12":2,
+  "3-12":3,
+  "4-12":4,
+  "5-12":5,
+  "6-12":6,
+  "7-12":7,
+  "8-12":8,
+  "9-12":9,
+  "10-12":10,
+  "11-12":11,
+);
+
+$map-grid-width-sm:(
+  "1": 12,
+  "1-12":12,
+  "2-12":12,
+  "3-12":12,
+  "4-12":12,
+  "5-12":12,
+  "6-12":12,
+  "7-12":12,
+  "8-12":12,
+  "9-12":12,
+  "10-12":12,
+  "11-12":12,
+);
+
+
+$map-breakpoints : (
+  'md' : $breakpoint-md,
+  'sm' : $breakpoint-sm,
+);
+
+
+// Grid using CSS-Grid with Felxbox fallback
+
+.grid {
+  --gutter: #{$grid-gutter};
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap:var(--gutter); 
+
+
+ 
+ @supports not (display: grid) {
+    // flexbox
+    width: calc(100% + var(--gutter));
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: calc(-1 * var(--gutter));
+  }
+
+
+ & > [class*="wi-"] {
+    box-sizing: border-box;
+
+    @supports not (display: grid) {
+      margin-left:var(--gutter);
+      margin-bottom:var(--gutter);
+    }
+
+    // &.wi-1-5 { flex-basis: calc(20% - 20px); } //example output
+    @each $unit, $width in $map-grid-width {
+      &.wi-#{$unit} {
+         grid-column: auto / span $width;
+         
+         @supports not (display: grid) {
+          $width_comp:calc(#{$width} / #{$grid-total-cols} * 100%);
+          flex-basis: calc(#{$width_comp} - calc( 1 * var(--gutter)))
+        }; 
+
+        }
+    }
+  
+  }
+
+  // grid gutter sizes
+  &.gutter-0 {--gutter: 0px;}
+  &.gutter-1 {--gutter: #{$grid-gutter};}
+  &.gutter-2 {--gutter: calc(2 * #{$grid-gutter});}
+  &.gutter-3 {--gutter: calc(3 * #{$grid-gutter});}
+  
+  // grid center items
+  &.grid-center {justify-content: center;} 
+
+  img {
+    max-width: 100%;
+  height: auto;
+  }
+
+
+  // width classes for breakpoints  
+  @each $bp_name, $bp_width in $map-breakpoints {
+    @media only screen and (max-width: $bp_width) {
+       > [class*="wi-"] {
+          // &.wi-lg-1-5 { flex-basis: calc(20%); } //example output
+    
+          @each $unit, $width in $map-grid-width {
+            &.wi-#{$unit}-#{$bp_name} {
+                grid-column: auto / span $width;
+              
+                @supports not (display: grid) {
+                  $width_comp:calc(#{$width} / #{$grid-total-cols} * 100%);
+                flex-basis: calc(#{$width_comp} - calc( 1 * var(--gutter))); 
+                };
+              }
+          }
+        }
+      }
+    }
+
+    
+
+    // extra width for breakpoint small
+    @media only screen and (max-width: $breakpoint-sm) {
+
+      grid-template-columns: auto;
+
+      > [class*="wi-"] {
+  
+        @each $unit, $width in $map-grid-width-sm {
+          &.wi-#{$unit} {
+            grid-column: auto / span 1;
+             
+             @supports not (display: grid) {
+             flex-basis: calc(#{$grid-total-cols} - calc( 1 * var(--gutter))); 
+            };
+            }
+        }
+        
+      }
+    }
+
+
+
+
+  }
+
+
+
+
+

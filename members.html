@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <include src="./src/partials/head-common.html"></include>
+  <title>F'Hain Chess Club</title>
+
+</head>
+
+<body>
+
+  <header class="page-header bg-pink">
+    <include src="./src/partials/header.html"></include>
+  </header>
+
+  <!-- section with flex grid-->
+  <section class="container is-large py-16">
+
+    <h1 class="pb-16 text-4xl font-bold text-center">Chess Club Members</h1>
+    
+
+    <div class="flex flex-wrap -mx-8">
+
+      <!-- card -->
+      <include src="./src/partials/member-item.html" 
+      locals='{
+        "name": "Olivia Davis",
+        "text": "Olivia is a talented chess player who enjoys competing in tournaments. She has a natural talent for the game and is able to quickly assess her opponents strengths and weaknesses. In her free time, she enjoys painting and drawing.",
+        "picture": "assets/images/profilepic-1.jpg"
+        }'
+      ></include>
+      <!-- / card -->
+
+            <!-- card -->
+            <include src="./src/partials/member-item.html" 
+            locals='{
+              "name": "Sophia Patel",
+              "text": "Olivia is a talented chess player who enjoys competing in tournaments. She has a natural talent for the game and is able to quickly assess her opponents strengths and weaknesses. In her free time, she enjoys painting and drawing.",
+              "picture": "assets/images/profilepic-2.jpg"
+              }'
+            ></include>
+            <!-- / card -->
+
+
+                  <!-- card -->
+      <include src="./src/partials/member-item.html" 
+      locals='{
+        "name": "Christopher Lee",
+        "text": "Olivia is a talented chess player who enjoys competing in tournaments. She has a natural talent for the game and is able to quickly assess her opponents strengths and weaknesses. In her free time, she enjoys painting and drawing.",
+        "picture": "assets/images/profilepic-3.jpg"
+        }'
+      ></include>
+      <!-- / card -->
+
+
+            <!-- card -->
+            <include src="./src/partials/member-item.html" 
+            locals='{
+              "name": "Emma Chen",
+              "text": "Olivia is a talented chess player who enjoys competing in tournaments. She has a natural talent for the game and is able to quickly assess her opponents strengths and weaknesses. In her free time, she enjoys painting and drawing.",
+              "picture": "assets/images/profilepic-4.jpg"
+              }'
+            ></include>
+            <!-- / card -->
+
+
+                  <!-- card -->
+      <include src="./src/partials/member-item.html" 
+      locals='{
+        "name": "Sophia Patel",
+        "text": "Olivia is a talented chess player who enjoys competing in tournaments. She has a natural talent for the game and is able to quickly assess her opponents strengths and weaknesses. In her free time, she enjoys painting and drawing.",
+        "picture": "assets/images/profilepic-5.jpg"
+        }'
+      ></include>
+      <!-- / card -->
+
+
+            <!-- card -->
+            <include src="./src/partials/member-item.html" 
+            locals='{
+              "name": "Alexandra Knight",
+              "text": "Olivia is a talented chess player who enjoys competing in tournaments. She has a natural talent for the game and is able to quickly assess her opponents strengths and weaknesses. In her free time, she enjoys painting and drawing.",
+              "picture": "assets/images/profilepic-6.jpg"
+              }'
+            ></include>
+            <!-- / card -->
+
+
+     
+
+           
+
+
+            <div class="my-6 w-full flex flex-wrap justify-center"><button class="btn btn-primary">See more <i data-feather="shuffle"></button></div>
+
+    </div>
+
+
+  </section>
+    <!-- / intro section with css grid-->
+
+ 
+
+  
+
+  <footer class="page-footer bg-gray">
+   
+    <include src="./src/partials/footer.html"></include>
+  </footer>
+
+  <script type="module" src="./assets/scripts/main.js"></script><!-- do not remove this line! -->
+
+
+</body>
+
+</html>
