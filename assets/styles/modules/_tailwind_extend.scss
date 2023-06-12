@@ -1,4 +1,48 @@
-@tailwind layer;
+/* fix borders */
+/* 
+*,
+::before,
+::after {
+  border-width: 0;
+  border-style: solid;
+  border-color: theme('borderColor.DEFAULT', currentColor);
+}
+*/
+
+/* containers */
+
+body {
+  @apply font-mono;
+}
+
+.container-full {
+  @apply w-full;
+}
+
+.container {
+  @apply max-w-6xl mx-auto lg:px-0 px-12;
+}
+
+.container.is-large {
+  max-width: 1400px;
+}
+
+
+.container.is-small {
+  max-width: 1120px;
+}
+
+.container.is-xsmall {
+  @apply max-w-sm;
+}
+
+
+
+
+
+
+
+/* buttons */
 
 .btn {
   @apply font-mono;
@@ -13,4 +57,49 @@
 
 .btn-primary {
   @apply block px-4 py-2 bg-pink rounded-none text-xl;
+}
+
+.ico-sz-3 {
+  width:30px;
+  height: 30px;
+  stroke-width: 2;
+}
+
+.ico-sz-4 {
+  width:60px;
+  height:60px;
+  stroke-width: 1;
+}
+
+
+/* navigation */
+
+.nav-hor {
+
+}
+
+
+.nav-hor a:hover {
+  @apply text-white;
+}
+
+.nav-hor li {
+  @apply text-center lg:inline-block lg:text-left list-none;
+}
+
+.nav-for-light-bg .nav-hor a:hover {
+    @apply text-pink;
+}
+
+
+
+/* image hover effect */
+
+.ef-img-co-ma2 {
+  filter: brightness(0.54) contrast(0.83) hue-rotate(-304deg) saturate(1.62) ;
+  
+  &:hover,
+  &:active {
+    filter: none;
+  }
 }

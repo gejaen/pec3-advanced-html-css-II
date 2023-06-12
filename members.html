@@ -10,99 +10,89 @@
 
 <body>
 
-  <header class="page-header co-bg-ma">
+  <header class="page-header bg-pink">
     <include src="./src/partials/header.html"></include>
   </header>
 
   <!-- section with flex grid-->
-  <section class="container is-large p-y6">
+  <section class="container is-large py-16">
 
-    <h1 class="tx-poc p-b6">Chess Club Members</h1>
+    <h1 class="pb-16 text-4xl font-bold text-center">Chess Club Members</h1>
     
 
-    <div class="fx-grid gutter-3">
+    <div class="flex flex-wrap -mx-8">
 
       <!-- card -->
-      <div class="wi-4-12">
-        <div class="card">
-          <img src="assets/images/profilepic-1.jpg"  class="card-img-top ef-img-co-ma2" alt="Picture">
-          <div class="card-body">
-            <h3 class="card-title">Olivia Davis</h3>
-            <p class="card-text">Olivia is a talented chess player who enjoys competing in tournaments. She has a natural talent for the game and is able to quickly assess her opponents' strengths and weaknesses. In her free time, she enjoys painting and drawing.</p>
-          </div>
-        </div>
-      </div>
+      <include src="./src/partials/member-item.html" 
+      locals='{
+        "name": "Olivia Davis",
+        "text": "Olivia is a talented chess player who enjoys competing in tournaments. She has a natural talent for the game and is able to quickly assess her opponents strengths and weaknesses. In her free time, she enjoys painting and drawing.",
+        "picture": "assets/images/profilepic-1.jpg"
+        }'
+      ></include>
       <!-- / card -->
 
             <!-- card -->
-            <div class="wi-4-12">
-              <div class="card">
-                <img src="assets/images/profilepic-2.jpg"  class="card-img-top ef-img-co-ma2" alt="Picture">
-                <div class="card-body">
-                  <h3 class="card-title">Sophia Patel</h3>
-                  <p class="card-text">Sophia is a dedicated chess player who enjoys studying the game and learning from other players. She has a methodical approach to the game and is always looking for ways to improve. Outside of chess, she enjoys cooking and trying new recipes.</p>
-                </div>
-              </div>
-            </div>
+            <include src="./src/partials/member-item.html" 
+            locals='{
+              "name": "Sophia Patel",
+              "text": "Olivia is a talented chess player who enjoys competing in tournaments. She has a natural talent for the game and is able to quickly assess her opponents strengths and weaknesses. In her free time, she enjoys painting and drawing.",
+              "picture": "assets/images/profilepic-2.jpg"
+              }'
+            ></include>
             <!-- / card -->
 
+
+                  <!-- card -->
+      <include src="./src/partials/member-item.html" 
+      locals='{
+        "name": "Christopher Lee",
+        "text": "Olivia is a talented chess player who enjoys competing in tournaments. She has a natural talent for the game and is able to quickly assess her opponents strengths and weaknesses. In her free time, she enjoys painting and drawing.",
+        "picture": "assets/images/profilepic-3.jpg"
+        }'
+      ></include>
+      <!-- / card -->
 
 
             <!-- card -->
-            <div class="wi-4-12">
-              <div class="card">
-                <img src="assets/images/profilepic-3.jpg"  class="card-img-top ef-img-co-ma2" alt="Picture">
-                <div class="card-body">
-                  <h3 class="card-title">Christopher Lee</h3>
-                  <p class="card-text">Christopher is a competitive chess player who enjoys the challenge of facing opponents of all skill levels. He is known for his creativity and ability to come up with unexpected moves. Outside of chess, he enjoys hiking and exploring the outdoors.</p>
-                </div>
-              </div>
-            </div>
+            <include src="./src/partials/member-item.html" 
+            locals='{
+              "name": "Emma Chen",
+              "text": "Olivia is a talented chess player who enjoys competing in tournaments. She has a natural talent for the game and is able to quickly assess her opponents strengths and weaknesses. In her free time, she enjoys painting and drawing.",
+              "picture": "assets/images/profilepic-4.jpg"
+              }'
+            ></include>
             <!-- / card -->
 
+
+                  <!-- card -->
+      <include src="./src/partials/member-item.html" 
+      locals='{
+        "name": "Sophia Patel",
+        "text": "Olivia is a talented chess player who enjoys competing in tournaments. She has a natural talent for the game and is able to quickly assess her opponents strengths and weaknesses. In her free time, she enjoys painting and drawing.",
+        "picture": "assets/images/profilepic-5.jpg"
+        }'
+      ></include>
+      <!-- / card -->
 
 
             <!-- card -->
-            <div class="wi-4-12">
-              <div class="card">
-                <img src="assets/images/profilepic-4.jpg"  class="card-img-top ef-img-co-ma2" alt="Picture">
-                <div class="card-body">
-                  <h3 class="card-title">Emma Chen</h3>
-                  <p class="card-text">Emma is a passionate chess player who enjoys the intellectual challenge of the game. She has a sharp mind and is able to think several moves ahead. When she's not playing chess, she enjoys practicing yoga and meditation.</p>
-                </div>
-              </div>
-            </div>
+            <include src="./src/partials/member-item.html" 
+            locals='{
+              "name": "Alexandra Knight",
+              "text": "Olivia is a talented chess player who enjoys competing in tournaments. She has a natural talent for the game and is able to quickly assess her opponents strengths and weaknesses. In her free time, she enjoys painting and drawing.",
+              "picture": "assets/images/profilepic-6.jpg"
+              }'
+            ></include>
             <!-- / card -->
 
 
+     
 
-            <!-- card -->
-            <div class="wi-4-12">
-              <div class="card">
-                <img src="assets/images/profilepic-5.jpg"  class="card-img-top ef-img-co-ma2" alt="Picture">
-                <div class="card-body">
-                  <h3 class="card-title">Sophia Patel</h3>
-                  <p class="card-text">Sophia is a dedicated chess player who enjoys studying the game and learning from other players. She has a methodical approach to the game and is always looking for ways to improve. Outside of chess, she enjoys cooking and trying new recipes.</p>
-                </div>
-              </div>
-            </div>
-            <!-- / card -->
+           
 
 
-
-            <!-- card -->
-            <div class="wi-4-12">
-              <div class="card">
-                <img src="assets/images/profilepic-6.jpg"  class="card-img-top ef-img-co-ma2" alt="Picture">
-                <div class="card-body">
-                  <h3 class="card-title">Alexandra Knight</h3>
-                  <p class="card-text">Alexandra is a chess enthusiast who enjoys studying the game and improving her skills. She has a calm and patient demeanor that serves her well during long matches. When she's not playing chess, she enjoys playing guitar and writing music.</p>
-                </div>
-              </div>
-            </div>
-            <!-- / card -->
-
-            <div class="wi-1 fx fx-jst-center m-t6"><button class="btn btn-primary">See more <i data-feather="shuffle"></button></div>
+            <div class="my-6 w-full flex flex-wrap justify-center"><button class="btn btn-primary">See more <i data-feather="shuffle"></button></div>
 
     </div>
 
